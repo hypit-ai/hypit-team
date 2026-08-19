@@ -5,66 +5,80 @@
 <h1 align="center">Hypit Team</h1>
 
 <p align="center">
-  Hypit AI 的团队体验站：介绍 Narratage、我们的工作现场，以及把视频写成语言的人。
+  An interactive team site for Hypit AI — the people building Narratage.
 </p>
 
-## 项目简介
+## About
 
-这是 Hypit AI 的交互式团队官网。页面围绕 Narratage 的核心命题展开：人剪辑视频，Agent 编译视频。
+This repository contains Hypit AI's team experience and the story behind Narratage, a source-first video programming language and compilation system for AI agents.
 
-网站使用一个贯穿全页的 Three.js 世界承接首屏、编译流程、团队和工作日常，并通过 GSAP 与 Lenis 将滚动位置、指针反馈和 3D 场景同步。中英文内容会根据浏览器语言和站内语言切换展示。
+The site uses a persistent Three.js world to connect the opening sequence, product narrative, field notes, and team profiles. GSAP and Lenis synchronize the WebGL scene with scroll position and pointer input, while all essential content remains available as semantic HTML.
 
-主要页面：
+## Highlights
 
-- `/`：Hypit AI 团队叙事、工作现场与成员介绍
-- `/team`：团队索引
-- `/manifesto`：Narratage 宣言
+- Scroll-driven Three.js scenes with responsive quality tiers
+- GSAP choreography and Lenis smooth scrolling
+- English and Simplified Chinese localization
+- Reduced-motion and non-WebGL fallbacks
+- Responsive layouts from mobile to large desktop screens
+- Dynamic Open Graph artwork and localized metadata
 
-## 技术栈
+## Routes
 
-- Next.js 16、React 19、TypeScript
-- Three.js、React Three Fiber、Drei
-- GSAP、Lenis、Motion
+| Route | Description |
+| --- | --- |
+| `/` | Main Hypit AI team experience |
+| `/team` | Team index |
+| `/manifesto` | Narratage manifesto |
+
+## Tech stack
+
+- Next.js 16, React 19, and TypeScript
+- Three.js, React Three Fiber, and Drei
+- GSAP, Lenis, and Motion
 - Tailwind CSS 4
 - Bun
 
-## 本地开发
+## Getting started
 
-需要 [Bun](https://bun.sh/) 1.3 或更高版本。
+[Bun](https://bun.sh/) 1.3 or newer is required.
 
 ```bash
+git clone git@github.com:hypit-ai/hypit-team.git
+cd hypit-team
 bun install
 bun run dev
 ```
 
-打开 [http://localhost:3000](http://localhost:3000)。
+Open [http://localhost:3000](http://localhost:3000).
 
-## 常用命令
+## Commands
 
-```bash
-bun run dev       # 启动开发服务器
-bun run lint      # ESLint 检查
-bun x tsc --noEmit
-bun run build     # 生产构建
-bun run start     # 启动生产服务器
-```
+| Command | Purpose |
+| --- | --- |
+| `bun run dev` | Start the development server |
+| `bun run lint` | Run ESLint |
+| `bun x tsc --noEmit` | Run TypeScript checks |
+| `bun run build` | Create a production build |
+| `bun run start` | Start the production server |
 
-## 内容与素材
-
-团队文案集中在 `lib/data/`，体验页内容位于 `lib/data/experience.ts`。团队照片从 Hypit AI 的 CDN 加载，允许域名配置在 `next.config.ts`。
-
-> [!NOTE]
-> Three.js 场景是装饰层；语义标题、说明文字和成员信息始终保留在 DOM 中，并提供 reduced-motion 降级。
-
-## 项目结构
+## Project structure
 
 ```text
-app/                    Next.js 路由、元数据与全局样式
-components/experience/  团队体验页与 Three.js 世界
-components/sections/    Narratage 内容章节
-components/ui/          通用界面组件
-hooks/                  语言、滚动与媒体查询 hooks
-lib/data/               双语内容与团队资料
-lib/experience/         3D 场景共享状态
-public/                 品牌与展示素材
+app/                    Routes, metadata, and global styles
+components/experience/  Team experience and persistent Three.js world
+components/sections/    Narratage editorial sections
+components/three/       Reusable WebGL scenes and materials
+components/ui/          Shared interface components
+hooks/                  Locale, media-query, and scroll hooks
+lib/data/               Localized product and team content
+lib/experience/         Shared 3D world state
+public/                 Brand and presentation assets
 ```
+
+## Content and assets
+
+Localized copy lives in `lib/data/`. The current team experience is defined in `lib/data/experience.ts`. Team photography is delivered through the Hypit AI CDN configured in `next.config.ts`.
+
+> [!NOTE]
+> WebGL is a progressive visual layer. Headings, descriptions, navigation, and team information remain in the DOM, and motion-heavy sequences provide reduced-motion behavior.
