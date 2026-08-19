@@ -1,0 +1,463 @@
+{
+  "$comment": "Hallmark build log. Gate 8 / 32 read this file: the NEXT build's macrostructure must differ from the newest entry below, or must change at least one variation knob. Newest entry first.",
+  "project": "narratage/team-site",
+  "builds": [
+    {
+      "id": "2026-08-19-output-relay-field-constellation",
+      "date": "2026-08-19",
+      "kind": "non-redundant company artifact and spatial field-note redesign",
+      "macrostructure": "Narrative Workflow — output relay + projected field constellation",
+      "previousMacrostructure": "Narrative Workflow — shared-source team runtime",
+      "knobsChanged": "The repeated seven-person compact roster was removed from the company artifact. Its variation knob is now an output relay: scroll moves source fragments through a compiler aperture into a renderable plane. The photo chapter changed from isolated images in empty grid tracks to source-backed annotations projected into the negative space and connected to a four-anchor Three.js constellation.",
+      "studiedDNA": {
+        "haoqi": "One fixed WebGL world supplies continuity behind sparse DOM media slots; project hover changes the surrounding scene, and registration marks turn empty space into an intentional composition.",
+        "hypitTranslation": "One existing React Three Fiber canvas now carries a source-to-output installation and a four-node field constellation. The real Hypit photos stay dominant; Three.js supplies narrative anchors, scan plates and signal tracks rather than copied reference assets.",
+        "originality": "No haoqi.design image, model, font, shader, copy or geometry was reused. The output-relay geometry and photo annotations were built from the Narratage source-to-world model and the visible contents of the four user-supplied photographs."
+      },
+      "content": {
+        "artifact": "The company card now explains a product invariant instead of repeating the later team section: source enters the compiler; what leaves must be visible, editable and renderable again.",
+        "fieldNotes": "Every annotation is observable in its paired image: video-language whiteboard, Hook/LLM intent diagram, one shared work table with laptops, and the informal fries-and-iced-tea photo. No team claim or metric was added.",
+        "people": "The full nickname-first team dossiers and the verified average-age-20 chapter remain unchanged as the single source of team introduction."
+      },
+      "motionSystem": {
+        "artifact": "A scroll-driven instanced fragment stream gathers at a rotating aperture and releases into a crimson output plane; pointer hover increases material presence without changing layout.",
+        "fieldNotes": "Four wire anchors follow the page's asymmetrical photo placement. Hovering a photograph focuses its matching anchor while a transform-only scan passes across the image.",
+        "performance": "Both additions reuse the existing fixed canvas and shared world state. There is no second WebGL context, no new texture request and no continuously animated DOM layout property."
+      },
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 5,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5,
+        "note": "Restraint remains 4 because the requested experience is intentionally GPU-led. The DOM annotations are terse, factual and absent from the later people dossiers, so they earn their visual footprint without creating another biography layer."
+      },
+      "gates": {
+        "result": "58/58 resolved for this variation pass",
+        "observed": "No horizontal overflow at 320, 375, 414 or 768 CSS pixels. Decorative Three.js figures remain inside the existing aria-hidden canvas; annotations are aria-hidden because the equivalent facts remain in each visible caption. No copied assets, invented metrics, gradient text, fake chrome or two-line controls were introduced."
+      },
+      "verification": {
+        "chromeDevTools": "Desktop 1440×1000 screenshots reviewed at the output relay, field-notes introduction, paired founder/idea images and work-table image. Mobile 375×812 screenshots reviewed for both the relay and field-note annotation flow; boundary widths 320, 414 and 768 report zero horizontal overflow.",
+        "console": "No errors. The existing upstream THREE.Clock deprecation warning and route-wide unused font-preload advisories remain; neither originates in this variation pass.",
+        "performance": "Production Chrome trace at 1280×800: LCP 1.388s, TTFB 37ms and CLS 0.00. Lighthouse snapshot: accessibility 100, best practices 100, SEO 100 and agentic browsing 100.",
+        "bun": "bun x tsc --noEmit pass; bun run lint pass; bun run build pass (Next.js 16.3.1, 7/7 routes)."
+      }
+    },
+    {
+      "id": "2026-08-19-team-runtime-roster",
+      "date": "2026-08-19",
+      "kind": "team identity normalization and company artifact redesign",
+      "macrostructure": "Narrative Workflow — shared-source team runtime",
+      "previousMacrostructure": "Narrative Workflow — intent field + age signal",
+      "knobsChanged": "The company artifact changed from seven interchangeable initial tiles to a seven-row operational roster. Every row now exposes a real nickname, Chinese name, role and active signal; the full people dossier below uses the same nickname-first hierarchy.",
+      "content": {
+        "identity": "The user-specified nicknames laurunshen and wjsoj were added. rpone / 鲨鱼 was normalized to the same nickname-first, Chinese-second order as the other six members.",
+        "statement": "The generic small-team/full-stack claim was replaced by a concrete collaboration model: seven people do not relay work through departments; multimodal research, infrastructure, product, design, content and distribution share one table.",
+        "facts": "No new team metrics, credentials or capabilities were invented; roles and names come directly from the saved team data."
+      },
+      "motionSystem": "Hover now propagates a crimson source signal across the real roster rows and activates their status nodes. The motion is transform/background-only, remains legible without hover and inherits the site's reduced-motion cutoff.",
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 5,
+        "specificity": 5,
+        "restraint": 5,
+        "variety": 5,
+        "note": "The redesign removes symbolic filler instead of adding another visual layer. On mobile, long role labels are intentionally omitted from the compact artifact because the full dossiers follow later in the page."
+      },
+      "verification": {
+        "chromeDevTools": "Desktop 1440 and mobile 375 screenshots reviewed for both the compact artifact and full member dossiers. Boundary widths 320, 414 and 768 report zero horizontal overflow; laurunshen has equal clientWidth and scrollWidth at every width.",
+        "console": "No new errors or issues; only the existing upstream THREE.Clock deprecation warning remains.",
+        "bun": "bun x tsc --noEmit pass; bun run lint pass; bun run build pass (Next.js 16.3.1, 7/7 routes)."
+      }
+    },
+    {
+      "id": "2026-08-19-intent-field-age-signal",
+      "date": "2026-08-19",
+      "kind": "haoqi-studied background system, truthful image captions and animated team-age chapter",
+      "macrostructure": "Narrative Workflow — intent field + age signal",
+      "previousMacrostructure": "Narrative Workflow — logo prologue + field-note proof",
+      "knobsChanged": "The fixed Three.js world gained a hero-scoped interference/halftone intent field whose density responds to pointer energy and scroll. The people chapter changed from a text-led roster introduction to a two-part age signal: a verified 00→20 counter with twenty traces, followed by seven compact source-backed member dossiers.",
+      "studiedDNA": {
+        "haoqiHero": "Deep ground, directional luminous bands, grain, a central dimensional object, independent pointer response and scroll-built signal density. No blue palette, sticker asset, model, font, shader or source code was copied.",
+        "hypitTranslation": "The reference grammar becomes a crimson compiler field behind the existing three-plate Hypit mark; pointer velocity raises the field and hero scroll progressively resolves its interference pattern.",
+        "originality": "The WebGL shader, Three.js integration and age choreography are original and consume the existing Hypit design tokens. The shader lives in the existing R3F canvas, avoiding a second WebGL context."
+      },
+      "contentAndAssets": {
+        "source": "docs/feishu-published-assets.md and the four user-supplied CDN images were re-read directly.",
+        "founder": "Two-panel editorial collage in front of a whiteboard headed high-level video language.",
+        "idea": "Semantic Video Markup whiteboard with Hook, LLM, encoder and intent-to-material diagrams.",
+        "working": "A candid shared-table work scene with several team members and laptops.",
+        "alvin": "An informal McDonald's photo with fries and iced tea, explicitly not presented as a formal founder portrait.",
+        "team": "Average age 20 and all seven profile lines are compressed only from the saved Feishu Team Intro; no new facts, birth years or metrics were added."
+      },
+      "motionSystem": {
+        "background": "Two low-frequency interference bands, pointer lens, velocity energy, scroll build/exit, halftone and deterministic grain in one transparent fullscreen shader plane.",
+        "age": "A one-shot GSAP counter from 00 to 20 with twenty transform-only trace reveals. Reduced motion renders 20 and completed traces immediately.",
+        "loader": "A 3×3 pixel drive wave and restrained shimmer replace the generic bar-only loading state."
+      },
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 5,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5,
+        "note": "Restraint remains 4 because the brief explicitly asks for a high-impact Three.js homepage. The age numeral was changed from solid crimson to paper with a one-pixel crimson signal so the accent remains emphasis rather than surface fill."
+      },
+      "gates": {
+        "result": "58/58 resolved",
+        "observed": "No horizontal overflow at 320, 375, 414 or 768 CSS pixels. The people kicker was moved outside the two-column age/copy wrapper to eliminate the tag-left/heading-right content shape. No invented metrics, gradient text, redrawn chrome, two-line controls or unlabelled decorative canvas remain.",
+        "accessibility": "Age markup was corrected after the first Lighthouse run: the decorative animated numeral is aria-hidden and the semantic 20-year statement remains in the visible heading and hook."
+      },
+      "verification": {
+        "chromeDevToolsResearch": "haoqi.design hero captured at top, left/right pointer states and multiple scroll positions; the local hero was then compared at the same interaction states.",
+        "visualQA": "Desktop 1440×900 and mobile 320/375/414/768 checked across hero, field notes, age chapter and member rows; reduced-motion mode confirmed no canvas and a static age value of 20.",
+        "bun": "bunx tsc --noEmit pass; bun run lint pass; bun run build pass (Next.js 16.3.1, 7/7 routes).",
+        "lighthouse": "Production mobile navigation: accessibility 100, best practices 96 (CSP inspector advisory only), SEO 100, agentic browsing 100.",
+        "performance": "Production mobile Chrome trace: LCP 1.342s, TTFB 28ms, CLS 0.00; 375 DOM elements, depth 9, no estimated DOM/reflow savings."
+      }
+    },
+    {
+      "id": "2026-08-19-logo-hero-editorial-field-notes",
+      "date": "2026-08-19",
+      "kind": "reference-led hero, typography, copy and photographic proof refinement",
+      "macrostructure": "Narrative Workflow — logo prologue + field-note proof",
+      "previousMacrostructure": "Narrative Workflow",
+      "knobsChanged": "The opening changed from a text-led single viewport to a 160svh logo prologue with loader/decode/layered-pointer/scroll handoff; an asymmetric four-image field-note proof chapter was added between materials and compiler. This is a structural delta, not a palette swap.",
+      "studiedDNA": {
+        "teamBP": "Short thesis statements, narrow reading measures, 1.9–2.05 prose line-height, specific team evidence and a photographic work log.",
+        "haqiHero": "Dark loading field → central 3D mark → decoded headline → pointer-separated depth layers → object-led scroll exit into the next chapter.",
+        "originality": "No reference asset, font, shader, copy or geometry was reused. public/logo.png was interpreted as three custom sheared BoxGeometry plates with real thickness; Hypit field photos and Narratage's source→world model supply the content system."
+      },
+      "typeSystem": "Bricolage Grotesque for Latin display, explicit Noto/Source Han/Songti serif stack for Chinese display, Manrope plus readable system CJK for body, JetBrains Mono for compiler apparatus. The rejected bubbly Chinese webfont was removed after browser review; the final system serif keeps the chosen high-contrast direction without shipping font shards.",
+      "motionSystem": {
+        "hero": "One-shot runtime loader, deterministic character decode, logo plate spring-in, circular halftone point field, three orbiting wire satellites, pointer-parallax by layer, and a scroll-driven upward handoff.",
+        "compiler": "The existing 720svh compiler and instanced crimson/paper time tunnel remain; mobile stage copy now sits on a tokenized dark information pane so WebGL never cuts through reading text.",
+        "accessibility": "Canvas and decorative copy stay aria-hidden; semantic headings remain in the DOM; reduced motion turns sticky chapters into normal reading flow and collapses animation durations."
+      },
+      "contentAndAssets": "Copy was rewritten around a concise thesis and verifiable product mechanics. Four user-supplied photos are loaded from video.wjsphy.top with intrinsic ratios and lazy loading: founder.png, idea.jpg, working.jpg, Alvin.jpg.",
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 5,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5,
+        "revisionPassesTriggered": 2,
+        "note": "The first Chinese display face was visibly too playful and was replaced. The first mobile handoff created an empty interval, so logo exit, section overlap and scene reveal were re-choreographed. Restraint stays at 4 because the brief explicitly asks for a high-impact Three.js experience."
+      },
+      "gates": {
+        "result": "58/58 resolved",
+        "observed": "No horizontal overflow at 375×812 or 1440×900; 1280×800 fold fit is rechecked in the final browser pass. Hero is asymmetric, nav N9, footer Ft5, no gradient text, no fake chrome, no fabricated metrics, no two-line controls, all motion has reduced-motion coverage.",
+        "fixedAtCloseout": "Removed layout-property padding animation from people rows; lifted photo/panel rgba values into semantic tokens; added h1 long-word wrap safety; removed hard-coded Three.js palette literals.",
+        "functionalTypefaceNote": "JetBrains Mono is the technical apparatus for a programming-language product, not a decorative outlier; it never carries prose. The page uses three functional type roles total."
+      },
+      "verification": {
+        "chromeDevToolsResearch": "TeamBP desktop/mobile typography and copy rhythm measured; haoqi.design desktop/mobile entry, hover and scroll states captured and compared.",
+        "visualQA": "Desktop 1440×900 and mobile 375×812 checked across hero, handoff, field notes, compiler/tunnel and people; all four CDN images returned 200 at their declared natural sizes.",
+        "bun": "bunx tsc --noEmit pass; bun run lint pass; bun run build pass (Next.js 16.3.1, 7/7 routes; final build compiled in 3.5s).",
+        "lighthouse": "Mobile navigation: accessibility 100, best practices 96 (only CSP inspector advisory), SEO 100, agentic browsing 100.",
+        "performance": "Chrome trace on production mobile: LCP 936ms, TTFB 24ms, CLS 0.00; DOM 331 elements/depth 9; no estimated savings for DOM, reflow or third-party insights."
+      }
+    },
+    {
+      "id": "2026-08-19-narrative-time-tunnel",
+      "date": "2026-08-19",
+      "kind": "full homepage redesign and Haqi-studied manifesto motion pass",
+      "macrostructure": "Narrative Workflow",
+      "previousMacrostructure": "The Proof Sheet",
+      "studiedDNA": "haoqi.design manifesto: long sticky hold, gateway ribbon, progressive star-line density, randomized character swaps, pointer-shifted vanishing point, and portal/annotation close. No proprietary model, texture, shader, font, or copy was reused.",
+      "originalAdaptation": "Hypit/Narratage turns the reference grammar into source → graph → compiler → world. The palette is void/paper/crimson; the statements are Ideas become worlds, Meaning owns time, and Seven minds, one compiler; the final portal is surrounded by source-first system claims.",
+      "motionSystem": {
+        "webgl": "Two instanced Three.js beam fields (paper and crimson), 252 instances on full tier and 126 on lite, travel through camera depth in two draw calls. Scroll velocity controls travel and streak length; pointer velocity controls impulse; pointer position shifts and tilts the vanishing point.",
+        "sequence": "Four-stage compiler copy → spiral gateway ribbon → sparse/dense time tunnel with two-line declarations → small central portal and four technical annotations.",
+        "accessibility": "Reduced-motion changes the 720svh sticky sequence into four ordinary readable steps and hides the decorative manifesto layer. Canvas and visual declarations are aria-hidden; the semantic compiler heading remains present."
+      },
+      "responsive": "Space Grotesk display + JetBrains Mono technical typography; mobile prose line-height raised to 1.85–1.9; declaration size and portal scale reduced independently on lite tier; no horizontal overflow at 320, 375, 414, or 768px.",
+      "verification": {
+        "referenceResearch": "Chrome DevTools MCP captured eight haoqi.design manifesto states from scroll 4200–9400 plus real hover positions.",
+        "visualQA": "Chrome DevTools MCP captured Hypit states at 1440×900, 1280×800, and 375×812; real hover screenshots show the tunnel origin moving across the viewport.",
+        "bun": "bun run lint pass; bunx tsc --noEmit pass; bun run build pass (Next.js 16.3.1, 7/7 pages).",
+        "production": "localhost:4124: TTFB 34–156ms across warm/cold reloads, DCL 730–742ms, load 875–960ms, 257KB transferred; Lighthouse snapshot 100 accessibility / 100 best practices / 100 SEO / 100 agentic browsing after the visible-label fix."
+      },
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 5,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5,
+        "note": "The manifesto is intentionally maximal and GPU-led; restraint is held at 4 because the user explicitly requested a high-impact Three.js set piece. Other sections stay editorial and comparatively quiet."
+      }
+    },
+    {
+      "id": "2026-08-18-rhythm-and-truncation-closeout",
+      "date": "2026-08-18",
+      "kind": "closeout pass over two parallel lanes (vertical rhythm / truncation vocabulary), driven by OBSERVED.md browser evidence",
+      "$note": "NOT a new build. Same 'The Proof Sheet' macrostructure; does not reset the gate 8/32 variation clock. This entry records the merge of the two lanes that answered OBSERVED.md D1/D2/D3, plus the leftovers each lane handed to this pass and four defects found while cross-reading their outputs.",
+      "macrostructure": "The Proof Sheet (unchanged)",
+      "knobsChanged": "sectionRhythm — the knob's value changed (see below); the knob itself is the same one.",
+      "lanesMerged": {
+        "rhythm": "app/globals.css + components/ui/SectionShell.tsx + all 17 sections. Vertical whitespace now has exactly one owner: pb is --spacing-tail everywhere, pt is a three-step RHYTHM record exported from SectionShell. A boundary is therefore tail + the NEXT section's pt, decided in one place instead of emerging from two symmetric paddings. At 1440px: setpiece 104px / flow 192px / movement 312px — spread widened from 1.5x to 3.0x. The `bare` prop is gone; the seven hand-laid sections import RHYTHM rather than writing py-*. SEC/09 also gained a fourth lg column (the package list, lifted out of the body's disclosure) so the right third carries load.",
+        "truncation": "New components/ui/ScrollEdge.tsx replaces CodeBlock's background scroll-shadow. Root cause of OBSERVED D1 confirmed at the source: the old shading was painted on `background`, which renders BEHIND the <code> text, so no amount of it could stop `overflow` from shearing the glyphs — the vocabulary existed in the stylesheet but was structurally incapable of appearing on screen. mask-image acts on content instead, and two @property lengths driven by animation-timeline: scroll(self) zero out the near edge at each end. hero-svml and svrun-candidate rewrapped to a 51-column budget; S7 lost both nested vertical scrollbars; the .trace-run marquee was replaced by a static 1.5px stroke."
+      },
+      "closeoutEdits": [
+        {
+          "file": "components/ui/DataTable.tsx, components/ui/Terminal.tsx, components/sections/HookAnchors.tsx",
+          "issue": "The truncation lane unified the three scrollers inside S7 and then declared ScrollEdge 'the site's only truncation vocabulary', but three site-wide scrollers were still shearing text bare: DataTable (min-width 44rem, used in S7/S8/S10), Terminal's log body (used in S9 twice) and S5's affinity table (min-width 34rem). The defect OBSERVED found in S7 was reachable in four other sections.",
+          "resolution": "All three now carry X_SCROLL. DataTable needed restructuring rather than a class: mask-image's positioning area is the border box, so hanging it on the bordered wrapper would have eaten the table's own right-hand 1px rule along with the text. Border and width stay on the outer div; a new inner div is the scroller. Terminal and HookAnchors had no border on the scrolling element, so the class alone was safe."
+        },
+        {
+          "file": "app/globals.css",
+          "issue": "`.trace-run` and `@keyframes run` (plus their reduced-motion override) had zero consumers after the S7 marquee was removed.",
+          "resolution": "Deleted all three blocks; the comment in GraphSeparation.tsx that explains why the marquee went away now says the CSS went with it."
+        },
+        {
+          "file": "components/ui/ScrollEdge.tsx",
+          "issue": "The header comment justified skipping the scroll-driven animation under prefers-reduced-motion by claiming globals forces `animation-duration: .001ms`. It does not — globals deliberately uses var(--dur-fast) with iteration-count 1, and says so.",
+          "resolution": "Comment rewritten to the real reason: under that media query the timeline is reinterpreted as time, so the fade width decouples from scroll position."
+        },
+        {
+          "file": "components/sections/Hero.tsx, components/sections/Team.tsx, components/sections/TeamLog.tsx, components/sections/HookAnchors.tsx",
+          "issue": "Stale constants and comments left by the two lanes: Hero still documented an 18-line reveal after hero-svml grew to 22; Team/TeamLog's `sec` prop docs advertised defaults of 16/17 against actual defaults of 15/16; S5 hand-wrote a heading size string byte-identical to TITLE_SCALE.movement instead of importing it, the exact drift the single-source rule exists to prevent.",
+          "resolution": "Hero's beat comment recomputed (0.78 + 21x0.022 + DUR.base = 1.46s, still inside HERO_SETTLE_MS = 1500 — checked, not assumed); doc defaults corrected; S5 now imports TITLE_SCALE.movement."
+        }
+      ],
+      "crossCheck": {
+        "sectionOrder": "data-sec 01..17, no gaps, no duplicates. 01 Hero (literal), 02-10 via SectionShell's sec prop, 11/12/13/14/17 literal, 15/16 via pad(sec,2) defaults.",
+        "hudTotal": "still derived — activeSection.ts counts document.querySelectorAll('[data-section][data-sec]'); HudFrame renders that count. Nothing hardcodes 17.",
+        "navAnchors": "#what -> S2, #hook -> S5, #graphs -> S7, #paradigms -> S11, #team -> S15; all five ids exist on the corresponding section elements.",
+        "railSwitchPoints": "SprocketRail.modeForSec cuts at 5 / 7 / 11 / 15 / 17, identical to nav.items' fromSec (2,5,7,11,15) plus the epilogue. Four systems agree.",
+        "navHighlightBoundary": "OBSERVED D3 fixed at the source: Nav reads heldSec from the one site-wide observer over all 17 sections and folds it to a movement via the last item whose fromSec <= current, so S8-S10 resolve to BUILD by derivation and the footer holds at PEOPLE (17) instead of freezing on whichever of five anchors was last seen.",
+        "factRedLines": "no 'DUCK protocol' (architecture.ts names the construct Candidate and only quotes Martelli's duck-typing line); 88 packages consistent across hero.ts and stats.ts; 'Narratage Open Source License' always spelled in full; 唐艺 given only as 16, never a birth year.",
+        "bilingual": "en/cn key counts equal in every file under lib/data and every section/ui component (script-checked, zero mismatches).",
+        "accent": "crimson only. ScrollEdge introduces no colour at all — the mask is achromatic.",
+        "spacingScale": "the four new rhythm tokens land on multiples of 4 at both ends of --spacing-section's clamp (80px -> 24/28/68/128, 160px -> 48/56/136/256). Between those ends the token is fluid by design, so gate 24 is satisfied at the endpoints, not at every viewport width."
+      },
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 5,
+        "execution": 4,
+        "specificity": 5,
+        "restraint": 5,
+        "variety": 5,
+        "previous": "P5 H4 E4 S5 R4 V5",
+        "why": {
+          "hierarchy": "4 -> 5. The old spread was 1.5x, which is a rounding error a reader cannot feel; signature shots got their emphasis by leaving the ordinary sections empty, which is why OBSERVED measured ~310px of nothing above SEC/09. Now the boundary is a single number with a single owner and a 3.0x spread, and the signature shots get the site's TIGHTEST entrance (104px) rather than the loosest neighbours.",
+          "execution": "held at 4. Not raised, for three reasons stated in residualIssues: the hero still shows about 13 of 22 code lines behind an inner scroll; four of six code samples in lib/data are unreferenced; and nothing in this pass was seen rendering.",
+          "restraint": "4 -> 5. The one perpetually-moving thing in the viewport (the 3.2s .trace-run marquee) is gone and its CSS with it; the site now has no infinite animation outside the caret. Four horizontal scrollers that each improvised their own truncation now share one."
+        }
+      },
+      "verification": {
+        "tsc --noEmit": "pass (exit 0, no output)",
+        "pnpm lint": "pass (exit 0, no output)",
+        "pnpm build": "pass (exit 0), 7/7 pages",
+        "emittedCssAudit": "grepped the production CSS chunk: --spacing-tail and the three --spacing-rhythm-* tokens present; zero occurrences of trace-run. ScrollEdge's rules are correctly absent from the Tailwind chunk — they ship in a React 19 <style href> hoisted at render and deduped by href.",
+        "notVerified": "No browser, dev server or devtools permitted. Every spacing figure, the 51-column budget and the DataTable border-box reasoning are arithmetic over source constants, not measured renders."
+      },
+      "residualIssues": [
+        "components/sections/Hero.tsx:468 still passes maxHeight=\"clamp(13rem, 40vh, 26rem)\" while hero-svml grew from 18 to 22 lines. At 1440x900 that is 360px of a 588px block: roughly 13 lines visible and 9 behind an inner scroll. The new Y_SCROLL fade at least makes that read as 'more below' instead of a shear, but the hero's headline artefact is now two-thirds hidden. Not changed unilaterally — it is the same art-direction call (fluid vs line-locked height) carried in the two previous entries, and it now also interacts with a copy decision.",
+        "lib/data/code-samples.ts still defines full-pipeline (79 cols), script-syntax (73), runtime-profile (86) and svs-recipe (33); grep finds no consumer for any of the four. Only hero-svml and svrun-candidate are rendered. Left in place because deleting them means editing the CodeSampleId union, which is outside a closeout's remit — but they are why the file's new column-budget comment can look contradicted by the data next to it.",
+        "components/ui/CodeBlock.tsx still hardcodes CODE_LINE_HEIGHT = 26 to mirror the CSS line box. maxLines' whole-line guarantee, and now also the Y_SCROLL exclusion that rides on it, break silently if the type scale moves.",
+        "components/sections/ModelMatrix.tsx:102 keeps a bare overflow-x-auto: it is a snap card carousel below sm and overflow-visible from sm up, so a permanent mask would fade a grid that does not scroll. Card edges are the affordance there. app/not-found.tsx:32 likewise (separate page, one <pre>).",
+        "components/sections/ParadigmTable.tsx keeps transition:width on the spine — knowingly retained, argued in the 2026-08-18-proof-sheet entry.",
+        "app/layout.tsx metadata description still carries the BP one-liner containing \"World's #1\".",
+        "components/ui/DataTable.tsx was accidentally reformatted by a prettier run with default options during this pass and then reformatted back with --no-semi --single-quote --print-width 100, which reproduces the repo's hand style to within a few line breaks. The file's semantics are unchanged and it typechecks, but its diff is larger than the two-hunk edit it should have been. The repo has no prettier config; one would prevent a repeat."
+      ]
+    },
+    {
+      "id": "2026-08-18-punch-list-reconcile",
+      "date": "2026-08-18",
+      "kind": "reconciliation pass over three parallel PUNCH.md lanes (copy/data, rhythm, motion)",
+      "$note": "NOT a new build. Same 'The Proof Sheet' macrostructure; does not reset the gate 8/32 variation clock. This entry records the merge of the F1/F2/F3 lanes plus two defects found while cross-checking their outputs against each other.",
+      "macrostructure": "The Proof Sheet (unchanged)",
+      "knobsChanged": "none",
+      "lanesMerged": {
+        "copy": "lib/data/** — three fabricated figures removed (hero '#1' one-liner, constructs '10K GitHub stars', recompile 1.4s/Δ0.8%), plus hook-demo timecode 00:04.12 -> em-dash placeholder and cli-demo's uncountable '4 segments · 3 selections · 1 moment' -> non-numeric summary. BP one-liner survives verbatim only in app/layout.tsx metadata (brand self-description slot).",
+        "rhythm": "components/sections/** + page.tsx — S9+S10 merged into Pipeline, DurableBuild.tsx deleted, data-sec renumbered to a continuous 01..17, eyebrows 18 -> 5 (movement heads only), display pull-quotes 9 -> 3, chapter transitions 16 -> 5, 1.4x/0.8x whitespace differentials written into code.",
+        "motion": "generic fade-ups gone from all 11 sections; Crosshair lerp trail removed; layout-property animations converted to transforms; lib/motion/variants.ts + presets.ts deleted (only tokens.ts survives, EASE_GSAP.snapMoment the sole overshoot entry point)."
+      },
+      "conflictsFound": [
+        {
+          "file": "components/sections/Hero.tsx",
+          "issue": "Both the rhythm lane and the earlier hero-repair lane own this file. Read the merged file rather than trusting the reports: nav SET[+] menu, the fromTo/clearProps line reveal at opacity 1, and CodeBlock maxLines are all present and untouched. No conflict.",
+          "resolution": "no revert needed"
+        },
+        {
+          "file": "components/sections/Hero.tsx:492",
+          "issue": "The meta line's sprocket-rail clearance was fixed with pl = max(0, 4.5rem - shell margin) but did not subtract the container's own px-5/sm:px-8/lg:px-12. At 1280 (margin 0, padding 48px) that over-indented the line by ~47px, visibly out of alignment with the Rule directly above it.",
+          "resolution": "Clearance recomputed as max(0, 5rem - container padding - shell margin), breakpoint-aware, pl-0 below 768px where the rail is 12px wide and its timecode labels are display:none."
+        },
+        {
+          "file": "components/ui/SprocketRail.tsx:55",
+          "issue": "modeForSec still carried the pre-merge 18-section interval table: 'end' (holes faded, spine only) was unreachable because no data-sec exceeded 17, and the ARGUE hammer-fall at S11 was still drawing BUILD's faint form.",
+          "resolution": "Intervals realigned to the five movement boundaries in page.tsx: 01-04 even, 05-06 word, 07-10 faint, 11-14 line, 15-16 log, 17 end."
+        }
+      ],
+      "crossCheck": {
+        "sectionOrder": "app/page.tsx renders Hero..Cta in blueprint order; data-sec 01..17 with no gaps and no duplicates (01 Hero, 02-10 via SectionShell sec prop, 11-14 + 17 literal, 15-16 via pad(sec,2)).",
+        "hudTotal": "not hardcoded — activeSection.ts derives total from document.querySelectorAll('[data-section][data-sec]').length, so HudFrame reads 17 automatically.",
+        "navAnchors": "all five movement anchors resolve: #what (S2), #hook (S5), #graphs (S7), #paradigms (S11), #team (S15).",
+        "railSwitchPoints": "now identical to the movement boundaries above.",
+        "factRedLines": "no 'DUCK protocol' (architecture.ts uses the Martelli duck-typing quote and names the construct 'Candidate'); package count 88 consistent in hero.ts and stats.ts; licence always spelled 'Narratage Open Source License'; 唐艺 given only as 16, never a birth year.",
+        "bilingual": "en/cn key counts are equal in all 18 lib/data files (script-checked).",
+        "accent": "crimson only."
+      },
+      "verification": {
+        "tsc --noEmit": "pass (exit 0, no output)",
+        "pnpm lint": "pass (exit 0, no output)",
+        "pnpm build": "pass (exit 0), 7/7 pages",
+        "notVerified": "No browser, dev server or devtools permitted. The Hero meta-line indent and the rail interval table are arithmetic/source reasoning, not measured renders."
+      },
+      "residualIssues": [
+        "components/sections/Hero.tsx still passes maxHeight=\"clamp(13rem, 40vh, 26rem)\" to CodeBlock instead of maxLines, so the hero code clip can land mid-line at viewport heights other than ~900px. Carried over from the previous entry; unchanged because it trades a fluid height for a fixed one (art-direction call).",
+        "components/sections/ParadigmTable.tsx:142 keeps a transition:width on the spine — knowingly retained, noted in the file.",
+        "app/layout.tsx metadata description still carries the BP one-liner containing \"World's #1\"; kept deliberately as brand self-description, but it is the one place a reader could read a ranking claim."
+      ]
+    },
+    {
+      "id": "2026-08-18-proof-sheet-p0-repair",
+      "date": "2026-08-18",
+      "baseCommit": "2bf2ef33584d266a95de65f4deff4d419372e275",
+      "kind": "defect repair (three parallel lanes, reconciled)",
+      "$note": "NOT a new build. This is the same 'The Proof Sheet' macrostructure as the entry below, repaired against browser-measured evidence. It does not reset the gate 8/32 variation clock — the next real build must still differ from the entry below this one.",
+      "macrostructure": "The Proof Sheet (unchanged)",
+      "knobsChanged": "none — all four repairs are defect fixes inside the existing knob settings",
+      "trigger": "Screenshots captured at 1440x900 and 375x812. Three defects were measured, not inferred; one further defect was found by arithmetic while fixing them.",
+      "lanes": [
+        {
+          "lane": "nav",
+          "defect": "P0 — the masthead contents bar overflowed its container and was clipped by overflow-x:clip.",
+          "rootCause": "max-w-shell resolves to --container-shell: 1280px (not 84rem). Minus lg:px-12 (96px) leaves 1184px usable; the fully expanded single row needs ~1440px at 11px mono with 0.16em tracking. The ml-auto group had no compressible item. Independent of viewport width — the container caps at 1280, so it also overflowed at 1920; 1440 is merely where the viewport began clipping it.",
+          "fix": "Contents bar and right rail moved from lg: to xl: (1024-1279 now uses the drawer). New UtilityMenu (SET[+]/SET[-]) demotes THEME and MOTION into a secondary panel: native <button>, aria-expanded/aria-controls, `hidden` removes the closed panel from the tab order, Esc returns focus, outside pointerdown/focusin closes. Version string and the LANG prefix appear only at 2xl. Right rail gap-3 -> gap-2 + shrink-0; movement items px-3 -> px-2 (min-h-11 preserved). Drawer now resets on matchMedia('(min-width: 80rem)') so the body scroll lock cannot survive a resize past the xl breakpoint with no visible close affordance.",
+          "budgetAfter": "xl/1280: ~988px of 1184 used (196px slack). 2xl/1920: ~1089px.",
+          "files": [
+            "components/ui/Nav.tsx"
+          ]
+        },
+        {
+          "lane": "hero",
+          "defect": "P0 — the hero code block rendered at a per-line decreasing near-zero opacity and never resolved.",
+          "rootCause": "Two engines writing the same property. CodeBlock carried a permanent `transition-[background-color,opacity]` on every line span; GSAP's autoAlpha writes inline opacity every frame, and each new value restarted a 320ms CSS transition chasing it, so the rendered value was permanently mid-flight. The from() immediateRender wrote all 18 lines to opacity:0 first, so any interruption (matchMedia rebuild, fonts.ready -> ScrollTrigger.refresh, useGSAP revertOnUpdate) left the block stuck translucent with no self-healing path. NOT caused by a second scrub animation — no ScrollTrigger in Hero binds line opacity to scroll progress.",
+          "fix": "CodeBlock now opts into the opacity transition only when dimLines is actually passed (transitionsOpacity). Hero's line reveal rewritten from() -> fromTo() so the end value is explicit rather than inferred from whatever the DOM held at build time, plus clearProps to hand styling back to CSS. A window.setTimeout settle guard (not gsap.delayedCall, which rides the ticker that may itself be stalled by Lenis lagSmoothing(0)) forces the readable end state.",
+          "narrativeCheck": "CREATIVE's 'compilation advance' intent is preserved and in fact restored: the per-line staggered reveal is still the beat of compiler output, and the scrub-driven crimson playhead still advances along the ruler. Before this fix the narrative was not merely at risk, it was invisible.",
+          "files": [
+            "components/ui/CodeBlock.tsx",
+            "components/sections/Hero.tsx"
+          ]
+        },
+        {
+          "lane": "misc",
+          "defects": [
+            "P0 — S3's code card sheared line 16 in half. Arithmetic, not styling: maxHeight 26rem = 416px, minus py-3 (24px) = 392px / 26px line box = 15.07 lines.",
+            "P1 — mobile timecodes collided into `00:0000:04`. Traced NOT to SprocketRail (its labels are display:none under 768px) but to Hero's RULER_TICKS: 9 absolutely-positioned labels at left:i/8*100%; at 375px minus px-5 each cell is ~42px while a `00:00` label at 11px mono with 0.12em tracking is ~40px wide, leaving a ~2px gap. Static geometry, not an animation mid-state."
+          ],
+          "fix": "CodeBlock gained maxLines?: number, converting to an exact height (maxLines * 26px + padding) so any clip necessarily lands on a line boundary; S3 now uses maxLines={15} (414px, within a pixel or two of the original design height). Truncation is signalled with a pure-CSS scroll-shadow (Komarov's two-layer technique: a background-attachment:local paper mask over a scroll-attached ink shadow at color-mix(ink 13%)), which introduces no second accent colour and self-hides when there is nothing to scroll. overscroll-contain added so a mobile scroll-to-end does not carry the page. Ruler density halved below sm (tick.i % 2 !== 0 -> hidden sm:block), keeping first/middle/last and every 8 seconds; full 9 ticks return at >=640px. Font size was NOT reduced.",
+          "files": [
+            "components/ui/CodeBlock.tsx",
+            "components/sections/SourceNotState.tsx",
+            "components/sections/Hero.tsx"
+          ]
+        }
+      ],
+      "reconciliation": {
+        "sharedFile": "components/ui/CodeBlock.tsx was edited by both the hero and misc lanes. The two edits are orthogonal — transitionsOpacity gates a transition property, maxLines computes a height — and compose without conflict. Verified by reading the merged file, not by trusting the lane reports.",
+        "boundaryCall": "The misc lane edited components/sections/Hero.tsx, which the hero lane also owned. Allowed: both files fall inside PUNCH.md's F2 exclusive scope (components/sections/**), and the two edits touch disjoint regions (RULER_TICKS markup vs the GSAP timeline). No cross-group violation.",
+        "accentColour": "crimson only. The new scroll shadow uses an ink tint, the UtilityMenu uses paper + rule. No second accent introduced by any lane.",
+        "copySource": "all human-readable copy still resolves from lib/data. SET / THEME / MOTION / LANG remain HUD marks, consistent with the existing treatment of those identifiers."
+      },
+      "verification": {
+        "tsc --noEmit": "pass (exit 0, no output)",
+        "pnpm lint": "pass (exit 0, no output)",
+        "pnpm build": "pass (exit 0), 7/7 static pages, no warnings",
+        "notVerified": "No browser, dev server or devtools was permitted for this pass. The nav horizontal budget, the 414px line-boundary clip and the ~84px mobile tick spacing are arithmetic from source constants, NOT re-measured renders. The original screenshots were taken before these fixes; no after-shots exist."
+      },
+      "residualIssues": [
+        "components/sections/Hero.tsx:468 still passes maxHeight=\"clamp(13rem, 40vh, 26rem)\" rather than maxLines. The fluid 40vh term means the clip lands on a fractional line at most viewport heights — the exact defect maxLines was built to remove. It reads correctly at 1440x900 only because 40vh happens to resolve near a line boundary there. Not changed unilaterally: switching to maxLines trades the hero's viewport-responsive height for a fixed one, which is an art-direction call.",
+        "components/sections/GraphSeparation.tsx:373 has the same untreated arithmetic: maxHeight 24rem = 384px, minus py-3 = 360px / 26px = 13.85 lines, so line 14 is sheared.",
+        "CODE_LINE_HEIGHT = 26 in CodeBlock.tsx is a hardcoded pixel constant duplicating the CSS line box. If F1 executes P2-5 (collapsing the --text-* scale), this constant desyncs silently and the line-boundary guarantee degrades with no type error and no test.",
+        "Hero.tsx creates settleTimer via window.setTimeout but never clears it — there is no cleanup return and `void settleTimer` only silences the unused-variable lint. Benign today because settle() guards on el.isConnected and its worst effect is clearProps to the readable state, but it is a latent leak if the guard is ever relaxed.",
+        "The vast majority of PUNCH.md remains unexecuted. This pass closed four measured defects; P0-1 through P0-8 (fabricated data, the 11 generic fade-ups, signature-shot layout privilege, the 18-section metronome, section merges, dark-mode contrast, cursor trail, layout-property animation) are all still open."
+      ]
+    },
+    {
+      "id": "2026-08-18-proof-sheet",
+      "date": "2026-08-18",
+      "baseCommit": "2bf2ef33584d266a95de65f4deff4d419372e275",
+      "kind": "audit+fix (three-lane repair, final reconciliation pass)",
+      "macrostructure": "The Proof Sheet",
+      "genre": "editorial",
+      "theme": "paper-and-crimson (official, extracted from the narratage vitepress theme — NOT a catalog theme)",
+      "tone": "technical-editorial",
+      "brandLock": {
+        "note": "This project has a pre-existing, non-overridable brand system taken from the official product site. Hallmark advice that conflicts with it was deliberately NOT applied.",
+        "waivedGates": {
+          "1": "display face is JetBrains Mono, a single monospace family for the entire site. The 2+1 pairing rule and 'mono is for code only' are waived: one mono family is the brand's literal argument (a video programming language). Gates 37/38 pass on the count anyway — one family, not four.",
+          "22": "neutrals are brand-fixed hex (#f3f0e8 paper / #191816 ink), not oklch with tinted chroma. They are already warm paper/ink, not flat grey — the gate's actual harm does not occur.",
+          "23-hierarchy": "no second or third accent colour is permitted. Depth is expressed by --depth-1/--depth-2, both color-mix of crimson into ink."
+        }
+      },
+      "knobs": {
+        "nav": "masthead — wordmark + version + five-movement contents, all flush left on one line, active item underlined by a 1px crimson rule driven by transform only. Explicitly NOT N1a (wordmark-left + centred links + button-right).",
+        "footer": "colophon — a dense key/value field list (VERSION / LICENSE / SOURCE / CONTACT / COMPILED), one row per line. Explicitly NOT the 4-column link wall.",
+        "hero": "asymmetric 5/7 split, left-aligned, no centred axis. Frame-ruler with timecode ticks + a 2x15px crimson playhead across the top; real .svml source on the right behind a sprocket rail.",
+        "sectionRhythm": "19 sections, deliberately unequal: 4 signature shots run `bare` with divider={false}; 3 sections carry 1.4x padding; only the 5 movement boundaries draw the SectionRule transition; 4 sections flip HUD/crop-marks to crimson via hudAccent.",
+        "instruments": "sprocket rail, crop marks, ink rules (CREATIVE.md's three devices) — all three motivated by the print/film proof concept, none decorative-without-anchor."
+      },
+      "selfCritique": {
+        "philosophy": 5,
+        "hierarchy": 4,
+        "execution": 4,
+        "specificity": 5,
+        "restraint": 4,
+        "variety": 5,
+        "revisionPassesTriggered": 0,
+        "note": "No axis below 3, so no pre-gate revision pass was required. H/E/R are held at 4 for the reasons recorded in `knownDeviations` and in the handoff summary."
+      },
+      "gates": {
+        "result": "58/58 resolved — 51 pass, 7 N/A (no images, no video, no form inputs, no radio-tab pattern, no sticky elements, no multi-theme section-head override, no prior study diagnosis)",
+        "fixedThisPass": [
+          "20 — Hallmark stamp was absent from globals.css; added at the top with the six-axis score line.",
+          "24 — off-scale spacing removed: gap-[22px] x2 -> gap-6, pl-[18px]/w-[18px] -> pl-5/w-5, px-[14px] -> px-3, gap-[6px] x2 -> gap-1.",
+          "25 — --container-prose was 44rem = 81ch at the 14.5px mono reading size, over the 75ch ceiling. Now 39rem = 72ch body / 65ch lede.",
+          "33 — the sprocket-tape <svg> in TeamLog.tsx had no aria-hidden of its own (it only inherited one from its parent).",
+          "34 — overflow-x: clip was on body but not on html; the gate requires both. Used clip, not hidden, so the fixed HUD and sprocket layers survive.",
+          "51 — no long-word wrap safety on display type; added overflow-wrap: anywhere + min-width: 0 to h1-h6. In an all-mono stack, `.svml` / `AI-generated` / long compounds had only the hyphen as a break opportunity.",
+          "54 — SectionShell's <header> carried eyebrow + heading and went md:flex-row, the banned tag-beside-heading shape. The row axis existed only to place an `aside` block that no section ever passed; header is now a single column and the dead `aside` prop is gone.",
+          "23/48 — removed --color-cyan and the `cool` tone from MonoTag / DataTable / Trace. No call site ever passed 'cool', so it was a loaded second accent: any future tone=\"cool\" would have silently broken the crimson-only rule (its dark value had already had to be walked back from #00fff2 fluorescent)."
+        ],
+        "notApplicable": {
+          "28,31,50": "the site ships zero <img>/<picture>/<video>; all imagery is drawn type, SVG, or the Three.js impression canvas.",
+          "39": "no <input>, <textarea> or <select> anywhere.",
+          "53": "no CSS-only radio tab pattern.",
+          "56": "no position:sticky anywhere; the nav and HUD are fixed layers with separate stacking.",
+          "52": "single theme; no per-theme .section__head override exists.",
+          "57": "no `study` diagnosis in scope; the theme is the official brand, already recorded as non-catalog."
+        }
+      },
+      "knownDeviations": [
+        {
+          "gate": 14,
+          "where": "components/sections/ParadigmTable.tsx — [data-spine] transition:width",
+          "accepted": true,
+          "why": "The four spines physically push each other; when spine n appears, spines 1..n-1 must actually yield space, and that displacement IS the meaning (the thickness a crushed paradigm leaves behind). Faking it with transform makes the creases overlap and the semantics collapse. Mitigated: the spines layer is an absolutely-positioned overlay inside the pinned viewport, so it is out of document flow; child count is fixed at 4; it fires at most 4 times in the whole page. No document-level reflow is possible."
+        },
+        {
+          "gate": "44a",
+          "where": "components/sections/Hero.tsx — lg:pt-28 / lg:pb-10",
+          "accepted": true,
+          "why": "Bottom padding is 1.45x top at the base breakpoint once the 74px fixed nav overlay is subtracted, but only ~1.05x at lg. Not corrected because the hero is min-h-dvh with a flex-1 middle that absorbs all slack — the hinge into the next section is the bottom rule + metaline, not the padding, so the gate's harm (a hero floating off the page) does not occur. Increasing pb blindly would trade a cosmetic ratio for real risk against gate 44b (fold fit), which could not be verified without a browser."
+        }
+      ],
+      "verification": {
+        "tsc --noEmit": "pass",
+        "pnpm lint": "pass (no output)",
+        "pnpm build": "pass, no warnings",
+        "emittedCssAudit": "grepped the production CSS chunk to confirm the fixes survived Tailwind tree-shaking: overflow-x:clip x2 (html + body), overflow-wrap:anywhere present, --container-prose:39rem, zero occurrences of `cyan`.",
+        "notVerified": "No browser, dev server or devtools was permitted for this pass. Gates 34, 44b and 49 were reasoned from source (clip on html+body, nav labels are single words/single CJK glyphs, buttons carry white-space:nowrap) but were NOT observed rendering at 320/375/414/768/1280/1920px. Treat responsive conformance as argued, not measured."
+      }
+    }
+  ]
+}

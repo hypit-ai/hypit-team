@@ -1,26 +1,867 @@
+/* Hallmark · macrostructure: The Proof Sheet · genre: editorial · theme: paper-and-crimson (official) · tone: technical-editorial */
+/* pre-emit critique: P5 H5 E4 S5 R5 V5  (2026-08-18 closeout; H/R raised, see .hallmark/log.json) */
+/* contrast: pass (40–41) · nav: masthead (N-rotated, not N1a) · footer: colophon (Ft-rotated) · slop: pass (42,43,45) */
+/* vertical rhythm: one owner — pb == --spacing-tail sitewide, pt is the three-step RHYTHM in SectionShell.
+   Boundary = tail + next section's pt: setpiece 104px · flow 192px · movement 312px (spread 3.0x). No section writes py-*. */
+/* truncation: one vocabulary — components/ui/ScrollEdge.tsx (mask-image + scroll-driven animation).
+   Every scroller whose overflow is *text* goes through X_SCROLL: CodeBlock, DataTable, Terminal, S5 affinity table, S7 graph + CLI rows.
+   Deliberately outside it: S10's snap card carousel (card edges are the affordance, and it is overflow-visible from sm up,
+   where a permanent mask would fade a grid that does not scroll). */
+/* 44: waived — hero is min-h-dvh; its padding-block-start is fixed-masthead clearance (64/74px), not composition, so the ≥1.3× bottom-heavy ratio does not apply. 44(b) holds at 1280×800. */
+/* honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ═══════════════════════════════════════════════════════════════════
+   Narratage — paper-and-crimson editorial design
+   来源：narratage/docs/.vitepress/theme/style.css（官方主题）
+   本文件的色彩 / 字体 / 质感以 BRAND.md 为唯一依据。
+   旧的 SIGNAL 深色琥珀色板已作废：强调色只有 crimson。
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* dark 变体：class `.dark` 或 `[data-theme="dark"]` 均可命中；
+   未显式指定时由下方 prefers-color-scheme 媒体查询接管。 */
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  /* ═══ 1. 色板 —— Light（纸），默认 ══════════════════════ */
+  --color-paper: #f3f0e8;
+  --color-paper-2: #ede9df;
+  /* 第三级纸面：卡片压在 paper-2 之上时的凹面 */
+  --color-sunk: #e6e1d5;
+  --color-ink: #191816;
+  /* 次级墨（长正文 / 表体），介于 ink 与 muted 之间 */
+  --color-ink-2: #4a453d;
+  --color-crimson: #a01240;
+  --color-crimson-soft: rgba(160, 18, 64, 0.1);
+  /* 同一层膜的重压版本（代码块选区） */
+  --color-crimson-wash: rgba(160, 18, 64, 0.18);
+  --color-crimson-deep: #7d0e32;
+  /* **实底面**专用（选区 / 激活 token / brand 按钮）：浅色下就是 crimson，
+     深色下降到 deep——反白字压在亮 crimson 上过不了 AA。描边仍用 crimson。 */
+  --color-crimson-fill: var(--color-crimson);
+  --color-rule: #c7c0b2;
+  --color-rule-soft: #dad4c7;
+  /* BRAND.md §1 的 muted 原值是 #837d72，但它在纸色 #f3f0e8 上只有 3.59:1，
+     达不到 WCAG AA 正文 4.5:1——而站内 muted 承担的是 eyebrow(11px) / 脚注 /
+     [data-word] 未点亮态这类**正文级小字**，不是纯装饰。
+     这里沿同一灰褐色相压暗到 #6b6459 = 5.13:1，层级关系不变
+     （ink 15.58 : muted 5.13 仍是清晰的两级），是达标所需的最小改动。
+     深色侧的 #8e877b 已有 5.26:1，无需改动。 */
+  --color-muted: #6b6459;
+  /* 反白字（crimson 实底上的字）—— 官方按钮用 #f7f3ec */
+  --color-on-crimson: #f7f3ec;
+
+  /* ─ 兼容别名：站内既有 tsx 仍在用 bg-0 / text-0 / carbide 等类名。
+       **别名一律 var() 引用原语，不再各自重打一遍 hex**——
+       深色块因此只需重定义上面那组原语，别名自动跟随，不会再漂移。
+       新代码请直接用 paper / ink / crimson / rule / muted。 ─ */
+  --color-bg-0: var(--color-paper);
+  --color-bg-1: var(--color-paper-2);
+  /* bg-2 是唯一没有原语对应的一档（比 paper-2 再深一级的凹面） */
+  --color-bg-2: var(--color-sunk);
+
+  --color-text-0: var(--color-ink);
+  --color-text-1: var(--color-ink-2);
+  /* text-2 是 muted 的兼容别名，指向同一个值以免绕过对比度修复 */
+  --color-text-2: var(--color-muted);
+
+  --color-line: var(--color-rule-soft);
+  --color-line-strong: var(--color-rule);
+
+  /* carbide / fuse 曾是琥珀与橙红，现统一收敛为唯一强调色 crimson */
+  --color-carbide: var(--color-crimson);
+  --color-carbide-dim: var(--color-crimson-deep);
+  --color-fuse: var(--color-crimson);
+  /* 此处曾有 --color-cyan（DataTable / MonoTag / Trace 的 `cool` 枚举）。
+     全站没有一个调用点传过 'cool'，它只是把一支上了膛的第二强调色留在
+     调色板里：任何人写下 tone="cool" 都会静默违反「强调色只有 crimson」。
+     枚举与 token 一并删除 —— 冷暖对照如果哪天真的需要，应该重新论证。 */
+
+  /* ═══ 4. 代码语法色 —— Light ═══════════════════════════ */
+  --color-code-text: #00002c;
+  --color-code-ln: #7d7dac;
+  --color-code-tag: #8800e2; /* 紫：距 crimson 95 CIE76，勿改粉 */
+  --color-code-attr: #006e69;
+  --color-code-string: #616700;
+  --color-code-expr: #ab3f00;
+
+  /* 曾经还有一套 code-kw / str / num / fn 的同义 token（值与上表逐条重复）。
+     全仓零引用——.tok-* 类直接读上面的 tag / string / expr / attr——已删。 */
+  /* 标点与注释是代码里的**可读内容**，在代码底 #ede9df 上原值分别只有
+     3.37:1 / 3.21:1，同样压暗到 AA 之上（4.82:1 / 5.17:1），色相不变。
+     行号 --color-code-ln 保持品牌原值：它是位置辅助，不是内容。 */
+  --color-code-punc: var(--color-muted);
+  --color-code-com: #5c5c8a;
+
+  /* 选区。曾经还有一对 --color-select-bg / -fg 与 ::selection 规则各写各的
+     （前者写 paper，后者也写 paper），零消费且互相打架，已删：
+     ::selection 直接读 crimson-fill + on-crimson。 */
+  --color-select-code-bg: var(--color-crimson-wash);
+
+  /* ═══ 2. 字体 —— 全站等宽 ══════════════════════════════
+     CJK 家族必须排在 Latin mono 之后：无 mono 字体覆盖汉字，
+     反序会把中文拉成 Latin 字宽。 */
+  --font-mono: var(--font-mono-latin), ui-monospace, "SF Mono", SFMono-Regular,
+    Menlo, Monaco, "Cascadia Mono", "Roboto Mono", Consolas, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", monospace;
+  /* 站内旧代码里的 font-sans 一律指向同一款 mono（品牌无 sans） */
+  --font-sans: var(--font-mono-latin), ui-monospace, "SF Mono", SFMono-Regular,
+    Menlo, Monaco, "Cascadia Mono", "Roboto Mono", Consolas, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", monospace;
+
+  /* ═══ 2. 字号 —— 五档刻度 + 三档标题 ═══════════════════
+     刻度本身定义在下面的 :root（`--step-*`），这里全部是**槽位别名**。
+     旧版把 15 个 --text-* 各自写死，其中 11 个挤在 10.5–15px、
+     四对相差 0.5px（肉眼不可辨）——那不是刻度，是「一个 UI 槽位一个数」。
+     现在同一物理尺寸只有一个来源：改刻度就改全站，槽位名只表达用途。 */
+
+  /* Hero tagline —— 与常规段标题同档，靠字重与字距区分。
+     下限从 13px 提到 16px：1230px 以下它曾是全页最小的字。 */
+  --text-hero: var(--step-title);
+  --text-hero--line-height: 1.35;
+  /* -0.045em 是给 50px 级 display 的量；20px 上下的等宽面上它会糊成一块 */
+  --text-hero--letter-spacing: -0.02em;
+  --text-hero--font-weight: 500;
+
+  /* 大号展示位（计数器 / 收束金句），仍在 mono 体系内 */
+  --text-display: var(--step-display);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.05em;
+  --text-display--font-weight: 700;
+
+  /* 乐章首标题 */
+  --text-h1: var(--step-head);
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h1--font-weight: 700;
+
+  /* 常规段标题 */
+  --text-h2: var(--step-title);
+  --text-h2--line-height: 1.28;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 700;
+
+  /* 组内小标题 */
+  --text-h3: var(--step-lead);
+  --text-h3--line-height: 1.4;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 700;
+
+  --text-lead: var(--step-lead);
+  --text-lead--line-height: 1.6;
+
+  --text-body: var(--step-read);
+  --text-body--line-height: 1.65;
+
+  --text-sm: var(--step-meta);
+  --text-sm--line-height: 1.6;
+
+  --text-mono: var(--step-meta);
+  --text-mono--line-height: 1.65;
+
+  --text-code: var(--step-read);
+  --text-code--line-height: 26px; /* 固定行高，供行数换算 */
+
+  --text-eyebrow: var(--step-label);
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.16em;
+
+  /* footer 栏标题 */
+  --text-micro: var(--step-label);
+  --text-micro--line-height: 1;
+  --text-micro--letter-spacing: 0.18em;
+
+  /* 按钮 */
+  --text-btn: var(--step-label);
+  --text-btn--line-height: 1;
+  --text-btn--letter-spacing: 0.13em;
+
+  --text-footer: var(--step-meta);
+  --text-footer--line-height: 1.7;
+  --text-footer-bar: var(--step-label);
+  --text-footer-bar--line-height: 1.6;
+
+  /* ═══ 3. 形态语言 ══════════════════════════════════════ */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --container-shell: 1280px;
+  /* 行长（measure）。全站正文是等宽，JetBrains Mono 的字身宽是 0.6em，
+     正文档 --step-read 14.5px → 1ch = 8.7px。原来的 44rem = 704px 换算下来是
+     **81 个字符**，远超可读上限：等宽尤其吃亏，因为每个 i 都占满一格，
+     行长比同宽度的比例字体更长、回扫更容易串行。
+     39rem = 624px → 正文 72ch、导语（16px）65ch，两档都落在 45–75ch 内。 */
+  --container-prose: 39rem;
+  --container-wide: 66rem;
+
+  --spacing-section: clamp(5rem, 3rem + 8vw, 10rem);
+  --spacing-block: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+
+  /* ── 纵向节奏：边界只有一个作者 ──────────────────────
+     此前每个 section 自己写对称的 py，两段之间的空白是「上段 pb + 下段 pt」
+     两个互不知情的作者相加的副产品——全站 16 个边界的极差只有 1.5×（256→384），
+     读者感知不到，只感知到「哪儿都一样空」。更糟的是招牌镜头写了 0.8× 想压紧，
+     邻居却是 1.6×/1.4× 的最松段，招牌反而拿到了全站最大的进场空白。
+
+     现在：**pb 全站恒为 tail，pt 三档**，于是边界值 = tail + 下一段的 pt，
+     由「下一段自己」独占决定，一个数一个作者。1440px 下（--spacing-section 封顶 160px）：
+
+       tail      56px   所有 section 的下缘，无例外
+       setpiece  48px   → 边界 104px   招牌镜头进场，贴脸
+       flow     136px   → 边界 192px   普通阅读段之间
+       movement 256px   → 边界 312px   乐章之间（配 SectionRule 转场线）
+
+     极差 3.0×，节奏第一次可感知；全部落在 4px 刻度上。 */
+  --spacing-tail: calc(var(--spacing-section) * 0.35);
+  --spacing-rhythm-setpiece: calc(var(--spacing-section) * 0.3);
+  --spacing-rhythm-flow: calc(var(--spacing-section) * 0.85);
+  --spacing-rhythm-movement: calc(var(--spacing-section) * 1.6);
+  --spacing-pad: clamp(20px, 4vw, 56px);
+  --spacing-nav: 74px;
+
+  /* ═══ 动效：时长档位 ══════════════════════════════════ */
+  --dur-instant: 80ms;
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-mid: 320ms;
+  --dur-slow: 480ms;
+  --dur-enter: 560ms;
+  --dur-stage: 900ms;
+  --dur-epic: 1350ms;
+
+  /* ═══ 动效：缓动曲线 ══════════════════════════════════ */
+  --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+  --ease-compile: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
+  --ease-linear: linear;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── 主题非色彩量 ─────────────────────────────────────── */
+:root {
+  color-scheme: light dark;
+
+  /* ═══ 字号刻度 —— 全站只有这七个物理尺寸 ════════════════
+     label  11    全大写 mono 标签（eyebrow / 按钮 / 角标 / 页脚条）
+     meta   13    元信息、表体、脚注、行内 mono
+     read   14.5  正文与代码（一个站只该有一个「读」的尺寸）
+     lead   16    导语与组内小标题
+     title  18→23 常规段标题、hero tagline
+     head   23→33 乐章首标题
+     display      收束大字 / 计数器
+     相邻档差最小 1.1×，最大 1.8×：这是能被眼睛认出的级差。 */
+  --step-label: 11px;
+  --step-meta: 13px;
+  --step-read: 14.5px;
+  --step-lead: 16px;
+  --step-title: clamp(18px, 2vw, 23px);
+  --step-head: clamp(23px, 3vw, 33px);
+  --step-display: clamp(30px, 5.2vw, 60px);
+
+  /* 语义嵌套深度：crimson 派生梯度，不引入第二强调色（见 §4） */
+  --depth-1: color-mix(in oklab, var(--color-crimson), var(--color-ink) 45%);
+  --depth-2: color-mix(in oklab, var(--color-crimson), var(--color-ink) 70%);
+
+  --pad: clamp(20px, 4vw, 56px);
+  --nav-h: 74px;
+  /* §3.2 纸纹 */
+  --grain-op: 0.42;
+  --grain-blend: multiply;
+  /* §3.4 拼贴 stamp */
+  --collage-blend: multiply;
+  /* 箭头 glyph（mask 用，继承 currentColor） */
+  --glyph-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 13'%3E%3Cpath d='M0 6.5h16M11 1l5.5 5.5L11 12' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ═══ 1. 色板 —— Dark ═══════════════════════════════════
+   三态：显式 .dark / [data-theme="dark"] 强制；无标记时跟随系统。
+   深色的**值**只写一次（下面的 --dk-… 组），两个入口只做重映射；
+   别名（bg-0、text-0、carbide 等）在 @theme 里已经 var() 指向原语，
+   所以深色块只需要动这十几个原语。 */
+:root {
+  --dk-paper: #131211;
+  --dk-paper-2: #1a1917;
+  --dk-sunk: #221f1c;
+  --dk-ink: #e9e4da;
+  --dk-ink-2: #b5aea2;
+  --dk-crimson: #dd3a63;
+  --dk-crimson-soft: rgba(221, 58, 99, 0.13);
+  --dk-crimson-wash: rgba(221, 58, 99, 0.24);
+  --dk-crimson-deep: #c22e53;
+  --dk-rule: #3a3630;
+  --dk-rule-soft: #2a2724;
+  --dk-muted: #8e877b;
+
+  --dk-code-text: #eeffff;
+  --dk-code-ln: #8686867c;
+  --dk-code-tag: #c792ea;
+  --dk-code-attr: #00fff2;
+  --dk-code-string: #eeff00;
+  --dk-code-expr: #ff7e34;
+  /* 注释是代码里的**可读内容**。品牌表只登记了 line-number 的 dark 值
+     #8686867c（48% alpha 中性灰），注释沿用它在代码底 #1a1917 上约 2:1，
+     深色下几乎读不出来。这里换成与 light 侧注释（#5c5c8a）同色系的
+     #9494bd = 6.05:1，既过 AA 又与中性灰的行号明确区分。 */
+  --dk-code-com: #9494bd;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light):not([data-theme="light"]) {
+    --color-paper: var(--dk-paper);
+    --color-paper-2: var(--dk-paper-2);
+    --color-sunk: var(--dk-sunk);
+    --color-ink: var(--dk-ink);
+    --color-ink-2: var(--dk-ink-2);
+    --color-crimson: var(--dk-crimson);
+    --color-crimson-soft: var(--dk-crimson-soft);
+    --color-crimson-wash: var(--dk-crimson-wash);
+    --color-crimson-deep: var(--dk-crimson-deep);
+    /* 实底面用 deep：#f7f3ec 压 #dd3a63 只有 3.9:1，压 #c22e53 是 4.99:1 */
+    --color-crimson-fill: var(--dk-crimson-deep);
+    --color-rule: var(--dk-rule);
+    --color-rule-soft: var(--dk-rule-soft);
+    --color-muted: var(--dk-muted);
+
+    --color-code-text: var(--dk-code-text);
+    --color-code-ln: var(--dk-code-ln);
+    --color-code-tag: var(--dk-code-tag);
+    --color-code-attr: var(--dk-code-attr);
+    --color-code-string: var(--dk-code-string);
+    --color-code-expr: var(--dk-code-expr);
+    --color-code-com: var(--dk-code-com);
+
+    --grain-op: 0.2;
+    --grain-blend: overlay;
+    --collage-blend: luminosity;
   }
 }
 
+/* 显式深色（切换器优先于系统偏好） */
+:root.dark,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: var(--dk-paper);
+  --color-paper-2: var(--dk-paper-2);
+  --color-sunk: var(--dk-sunk);
+  --color-ink: var(--dk-ink);
+  --color-ink-2: var(--dk-ink-2);
+  --color-crimson: var(--dk-crimson);
+  --color-crimson-soft: var(--dk-crimson-soft);
+  --color-crimson-wash: var(--dk-crimson-wash);
+  --color-crimson-deep: var(--dk-crimson-deep);
+  --color-crimson-fill: var(--dk-crimson-deep);
+  --color-rule: var(--dk-rule);
+  --color-rule-soft: var(--dk-rule-soft);
+  --color-muted: var(--dk-muted);
+
+  --color-code-text: var(--dk-code-text);
+  --color-code-ln: var(--dk-code-ln);
+  --color-code-tag: var(--dk-code-tag);
+  --color-code-attr: var(--dk-code-attr);
+  --color-code-string: var(--dk-code-string);
+  --color-code-expr: var(--dk-code-expr);
+  --color-code-com: var(--dk-code-com);
+
+  --grain-op: 0.2;
+  --grain-blend: overlay;
+  --collage-blend: luminosity;
+}
+
+/* 显式浅色 */
+:root.light,
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* ── 基础层 ───────────────────────────────────────────── */
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  /* clip（不是 hidden）：hidden 会把 html 变成滚动容器，
+     令后代的 position:sticky / fixed 失效 —— 齿孔栏与 HUD 都靠 fixed。 */
+  overflow-x: clip;
+}
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--step-read);
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-variant-ligatures: none;
+  text-wrap: pretty;
+  overflow-x: clip;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-mono);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+/* 大字级的换行兜底。全站唯一 Latin 字体是等宽，`narratage`/`AI-generated`/
+   `.svml` 这类长复合词在 display 档（最大 60px）下，320px 屏上唯一的断点是
+   连字符 —— 没有它就整词溢出、把版心推出视口。`anywhere` 只在没有其它断点
+   时才生效，正常行的断字规则不受影响。`min-width:0` 让这些标题在 flex /
+   grid 轨道里可以真的收缩，而不是撑到内容固有宽度。 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+::selection {
+  background: var(--color-crimson-fill);
+  color: var(--color-on-crimson);
+}
+pre ::selection,
+code ::selection {
+  background: var(--color-select-code-bg);
+  color: var(--color-ink);
+}
+:lang(zh),
+.cn {
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 焦点（BRAND.md §1）───────────────────────────────── */
+:where(a, button, [role="button"], input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-crimson);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  background: var(--color-crimson);
+  color: var(--color-on-crimson);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+}
+
+/* ═══ §3.1 np-rule —— 带末端刻度的细线（品牌标志性元素）═══ */
+.np-rule {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: var(--color-rule);
+}
+.np-rule::before,
+.np-rule::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: var(--color-rule);
+}
+.np-rule::before {
+  left: 0;
+}
+.np-rule::after {
+  right: 0;
+}
+/* 单端刻度 */
+.np-rule.tick-l::after {
+  content: none;
+}
+.np-rule.tick-r::before {
+  content: none;
+}
+.np-rule.tick-none::before,
+.np-rule.tick-none::after {
+  content: none;
+}
+
+/* ═══ §3.2 np-grain —— 纸张颗粒全站覆盖层 ════════════════ */
+.np-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  opacity: var(--grain-op);
+  mix-blend-mode: var(--grain-blend);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* ═══ §3.4 报头 wordmark 双色 ════════════════════════════ */
+.np-masthead-ink {
+  fill: var(--color-ink);
+}
+.np-masthead-red {
+  fill: var(--color-crimson);
+}
+.np-collage {
+  mix-blend-mode: var(--collage-blend);
+  pointer-events: none;
+}
+
+/* ── 分隔线的其它形态（保留既有类名，色彩收敛到 rule）── */
+.rule-trace {
+  height: 1px;
+  border: 0;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-rule) 0 6px,
+    transparent 6px 12px
+  );
+}
+.rule-marked {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: var(--step-label);
+  letter-spacing: 0.16em;
+  color: var(--color-muted);
+}
+.rule-marked::before,
+.rule-marked::after {
+  content: "";
+  height: 1px;
+  background: var(--color-rule);
+}
+.rule-ruler {
+  height: 12px;
+  background:
+    repeating-linear-gradient(to right, var(--color-rule-soft) 0 1px, transparent 1px 16px)
+      bottom / 100% 6px no-repeat,
+    repeating-linear-gradient(to right, var(--color-rule) 0 1px, transparent 1px 80px)
+      bottom / 100% 12px no-repeat;
+}
+
+.caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.95em;
+  margin-left: 0.18em;
+  background: var(--color-crimson);
+  transform: translateY(0.06em);
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* 词级高亮（S2） */
+[data-word] {
+  --w: 0;
+  position: relative;
+  color: color-mix(in oklab, var(--color-muted), var(--color-ink) calc(var(--w) * 100%));
+}
+[data-word][data-anchor]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.6em;
+  width: 100%;
+  height: 2px;
+  background: var(--color-crimson);
+  transform-origin: left;
+  transform: scaleX(var(--w));
+  opacity: calc(var(--w) * 0.7);
+}
+
+/* ═══ §4 语义高亮系统 ════════════════════════════════════ */
+/* 范围标记 @photoshop */
+.syn-marker {
+  color: var(--color-crimson);
+  font-weight: 700;
+  background: var(--color-crimson-soft);
+  box-shadow: inset 0 0 0 1px var(--color-crimson);
+  border-radius: 3px;
+  padding: 0 0.18em;
+}
+/* 可交互词 */
+.semantic-token {
+  border-radius: 3px;
+  padding: 0 0.18em;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out-quart),
+    box-shadow var(--dur-fast) var(--ease-out-quart),
+    color var(--dur-fast) var(--ease-out-quart);
+}
+.semantic-token:hover,
+.semantic-token:focus-visible {
+  background: var(--color-crimson-soft);
+  box-shadow: inset 0 0 0 1px var(--color-crimson);
+}
+.semantic-token.semantic-active {
+  background: var(--color-crimson-fill);
+  color: var(--color-on-crimson);
+  box-shadow: inset 0 0 0 1.5px var(--color-crimson-fill);
+}
+.semantic-token:active {
+  background: var(--color-crimson-soft);
+  box-shadow: inset 0 0 0 1.5px var(--color-crimson);
+}
+/* 嵌套深度：**crimson 派生梯度**，不是第二/第三强调色。
+   语法色（attr 青 / expr 橙）只许出现在 <pre>/<code> 里；
+   正文里的可交互词一旦借用它们，页面事实上就有三个强调色了。 */
+.semantic-token[data-depth="1"]:hover,
+.semantic-token[data-depth="1"]:focus-visible,
+.syn-marker[data-depth="1"] {
+  color: var(--depth-1);
+  background: color-mix(in srgb, var(--depth-1) 14%, transparent);
+  box-shadow: inset 0 0 0 1px var(--depth-1);
+}
+.semantic-token[data-depth="2"]:hover,
+.semantic-token[data-depth="2"]:focus-visible,
+.syn-marker[data-depth="2"] {
+  color: var(--depth-2);
+  background: color-mix(in srgb, var(--depth-2) 14%, transparent);
+  box-shadow: inset 0 0 0 1px var(--depth-2);
+}
+/* 跨行范围：SVG path 描边框住 */
+.semantic-range-canvas {
+  pointer-events: none;
+}
+.semantic-range-canvas path {
+  fill: var(--color-crimson-soft);
+  stroke: var(--color-crimson);
+  stroke-width: 1.75;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+/* 词级点亮 */
+.script-word {
+  transition:
+    background-color var(--dur-instant) var(--ease-linear),
+    color var(--dur-instant) var(--ease-linear),
+    box-shadow var(--dur-instant) var(--ease-linear);
+}
+.script-word.active {
+  background: var(--color-crimson-soft);
+  color: var(--color-crimson);
+  box-shadow: inset 0 0 0 1px var(--color-crimson);
+}
+/* 播放头 */
+.playhead {
+  width: 2px;
+  height: 15px;
+  background: var(--color-crimson);
+}
+/* 语义时间轴 */
+.timeline-track {
+  display: grid;
+  grid-template-columns: 31fr 44fr 25fr;
+  height: 5px;
+}
+.timeline-track .segment {
+  background: var(--color-rule-soft);
+}
+.timeline-track .point {
+  background: var(--color-rule);
+}
+
+/* ═══ 代码 token（§4 语法色表）═══════════════════════════ */
+.tok-kw {
+  color: var(--color-code-tag);
+  font-weight: 500;
+}
+.tok-str {
+  color: var(--color-code-string);
+}
+.tok-num {
+  color: var(--color-code-expr);
+}
+.tok-fn {
+  color: var(--color-code-attr);
+}
+.tok-punc {
+  color: var(--color-code-punc);
+}
+.tok-com {
+  color: var(--color-code-com);
+  font-style: italic;
+}
+.line-hl {
+  background: var(--color-crimson-soft);
+  box-shadow: inset 2px 0 0 var(--color-crimson);
+}
+
+/* ═══ §3.3 按钮 ══════════════════════════════════════════ */
+.np-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 0;
+  border: 1px solid var(--color-crimson);
+  font-family: var(--font-mono);
+  font-size: var(--step-label);
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color var(--dur-fast) var(--ease-out-quart),
+    color var(--dur-fast) var(--ease-out-quart),
+    border-color var(--dur-fast) var(--ease-out-quart),
+    transform var(--dur-instant) var(--ease-out-quart);
+}
+.np-btn--brand {
+  background: var(--color-crimson-fill);
+  color: var(--color-on-crimson);
+}
+.np-btn--brand:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-paper);
+}
+.np-btn--alt {
+  background: transparent;
+  color: var(--color-crimson);
+}
+.np-btn--alt:hover {
+  background: var(--color-crimson-fill);
+  color: var(--color-on-crimson);
+}
+/* 按下去要有回馈：一个自称「仪器 / 校样」的站点，按键不该毫无手感。 */
+.np-btn:active {
+  transform: translateY(1px);
+  background: var(--color-crimson-deep);
+  border-color: var(--color-crimson-deep);
+  color: var(--color-on-crimson);
+}
+.np-btn[aria-disabled="true"],
+.np-btn:disabled {
+  opacity: 0.4;
+  /* 原来写的是 pointer-events:none —— 那样 cursor 规则永远不会生效，
+     禁用态与可点态在指针上完全一样。改成保留命中区、只吃掉点击。 */
+  cursor: not-allowed;
+}
+.np-btn[aria-disabled="true"]:active,
+.np-btn:disabled:active {
+  transform: none;
+}
+/* 箭头用 mask 绘制，继承 currentColor */
+.np-btn__arrow {
+  display: inline-block;
+  width: 18px;
+  height: 13px;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--glyph-arrow) no-repeat center / contain;
+  mask: var(--glyph-arrow) no-repeat center / contain;
+  transition: transform var(--dur-base) var(--ease-out-quart);
+}
+.np-btn:hover .np-btn__arrow,
+.np-btn:focus-visible .np-btn__arrow {
+  transform: translateX(4px);
+}
+
+/* ═══ 网格 / 兜底装饰 ════════════════════════════════════ */
+.grid-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--color-rule-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-rule-soft) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 0%, transparent 72%);
+  opacity: 0.55;
+}
+
+/* ── 偏好适配 ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  /* 「减少动效」不等于「取消动效」：0.001ms 会把状态切换变成瞬移闪烁，
+     反而更难跟。功能性动效应该**变快、变短**，不是消失。 */
+  *,
+  *::before,
+  *::after {
+    animation-duration: var(--dur-fast) !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--dur-fast) !important;
+    scroll-behavior: auto !important;
+  }
+  .caret::after {
+    animation: none;
+    opacity: 1;
+  }
+  .np-btn:hover .np-btn__arrow,
+  .np-btn:focus-visible .np-btn__arrow {
+    transform: none;
+  }
+  .grid-field {
+    mask-image: none;
+    opacity: 0.3;
+  }
+  [data-word] {
+    --w: 1;
+  }
+}
+/* 「增加对比度」必须分明暗两侧写。原来这一组深灰打在裸 :root 上，
+   深色用户一开这个偏好就拿到浅色面板的值：--color-text-1 掉到 1.33:1，
+   等于把正文擦掉——正是这个偏好想避免的事。 */
+@media (prefers-contrast: more) {
+  :root:not(.dark):not([data-theme="dark"]) {
+    --color-muted: #605a51;
+    --color-ink-2: #2e2b26;
+    --color-rule: #9d968a;
+    --color-rule-soft: #b3ac9f;
+  }
+  :root.dark,
+  :root[data-theme="dark"] {
+    --color-muted: #a8a196;
+    --color-ink-2: #d8d2c7;
+    --color-rule: #57524a;
+    --color-rule-soft: #423d37;
+  }
+}
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) {
+  :root:not(.light):not([data-theme="light"]) {
+    --color-muted: #a8a196;
+    --color-ink-2: #d8d2c7;
+    --color-rule: #57524a;
+    --color-rule-soft: #423d37;
+  }
 }

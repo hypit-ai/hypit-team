@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/logo-mark.svg" width="72" alt="Hypit AI" />
+</p>
 
-## Getting Started
+<h1 align="center">Hypit Team</h1>
 
-First, run the development server:
+<p align="center">
+  Hypit AI 的团队体验站：介绍 Narratage、我们的工作现场，以及把视频写成语言的人。
+</p>
+
+## 项目简介
+
+这是 Hypit AI 的交互式团队官网。页面围绕 Narratage 的核心命题展开：人剪辑视频，Agent 编译视频。
+
+网站使用一个贯穿全页的 Three.js 世界承接首屏、编译流程、团队和工作日常，并通过 GSAP 与 Lenis 将滚动位置、指针反馈和 3D 场景同步。中英文内容会根据浏览器语言和站内语言切换展示。
+
+主要页面：
+
+- `/`：Hypit AI 团队叙事、工作现场与成员介绍
+- `/team`：团队索引
+- `/manifesto`：Narratage 宣言
+
+## 技术栈
+
+- Next.js 16、React 19、TypeScript
+- Three.js、React Three Fiber、Drei
+- GSAP、Lenis、Motion
+- Tailwind CSS 4
+- Bun
+
+## 本地开发
+
+需要 [Bun](https://bun.sh/) 1.3 或更高版本。
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000)。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 常用命令
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run dev       # 启动开发服务器
+bun run lint      # ESLint 检查
+bun x tsc --noEmit
+bun run build     # 生产构建
+bun run start     # 启动生产服务器
+```
 
-## Learn More
+## 内容与素材
 
-To learn more about Next.js, take a look at the following resources:
+团队文案集中在 `lib/data/`，体验页内容位于 `lib/data/experience.ts`。团队照片从 Hypit AI 的 CDN 加载，允许域名配置在 `next.config.ts`。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> [!NOTE]
+> Three.js 场景是装饰层；语义标题、说明文字和成员信息始终保留在 DOM 中，并提供 reduced-motion 降级。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 项目结构
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+app/                    Next.js 路由、元数据与全局样式
+components/experience/  团队体验页与 Three.js 世界
+components/sections/    Narratage 内容章节
+components/ui/          通用界面组件
+hooks/                  语言、滚动与媒体查询 hooks
+lib/data/               双语内容与团队资料
+lib/experience/         3D 场景共享状态
+public/                 品牌与展示素材
+```

@@ -1,0 +1,36 @@
+:root {
+  --ex-void: #0d0d11;
+  --ex-void-raised: #15141a;
+  --ex-wine: #210812;
+  --ex-paper: #f3f0e8;
+  --ex-paper-soft: #d7d1c5;
+  --ex-muted: #8f8990;
+  --ex-crimson: #a01240;
+  --ex-crimson-hot: #e23867;
+  --ex-crimson-dark: #690b2a;
+  --ex-on-accent: #0d0d11;
+  --ex-line: rgba(243, 240, 232, 0.12);
+  --ex-line-strong: rgba(243, 240, 232, 0.28);
+  --ex-crimson-wash: rgba(226, 56, 103, 0.14);
+  --ex-void-clear: rgba(13, 13, 17, 0);
+  --ex-void-soft: rgba(13, 13, 17, 0.74);
+  --ex-void-veil: rgba(13, 13, 17, 0.26);
+  --ex-photo-shade: rgba(13, 13, 17, 0.74);
+  --ex-panel: rgba(13, 13, 17, 0.84);
+  --ex-panel-shadow: rgba(13, 13, 17, 0.72);
+  --ex-shadow: rgba(0, 0, 0, 0.46);
+  --ex-focus: #ff7399;
+
+  --ex-page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --ex-nav-height: 5.25rem;
+  --ex-content: 92rem;
+  --ex-space-section: clamp(7rem, 13vw, 14rem);
+  --ex-ease: cubic-bezier(0.66, 0, 0.01, 1);
+  --ex-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ex-fast: 180ms;
+  --ex-base: 520ms;
+  --ex-slow: 980ms;
+  --ex-font-display: var(--font-display-latin), "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", STSong, SimSun, serif;
+  --ex-font-body: var(--font-body-latin), "MiSans", "HarmonyOS Sans SC", "PingFang SC", "Noto Sans SC", sans-serif;
+  --ex-font-technical: var(--font-mono-latin), ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
